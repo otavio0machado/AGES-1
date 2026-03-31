@@ -1,0 +1,125 @@
+/* ============================================
+   CSS Reset — baseado no reset moderno de Josh Comeau
+   Garante consistencia visual entre navegadores
+   ============================================ */
+
+/* 1. Box-sizing global: border-box para todos os elementos.
+      Isso faz com que padding e border sejam incluidos
+      no tamanho total do elemento, facilitando o calculo. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove margens padrao de todos os elementos.
+      Cada navegador aplica margens diferentes; zerando,
+      nos temos controle total. */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Configuracoes base do body:
+      - line-height acessivel (1.5 e um bom padrao)
+      - anti-aliasing para fontes mais suaves no macOS/iOS */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 4. Imagens e midias responsivas por padrao.
+      Impede que imagens ultrapassem o container pai. */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Heranca de fonte em elementos de formulario.
+      Por padrao, inputs e botoes NAO herdam a fonte do body.
+      Esse reset corrige isso. */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* 6. Quebra de texto para evitar overflow.
+      Palavras longas serao quebradas ao inves de
+      estourar o container. */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 7. Headings sem estilo padrao de tamanho.
+      Vamos estilizar cada um manualmente no style.css */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* 8. Links sem estilo padrao */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 9. Listas sem marcadores padrao */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 10. Tabelas com colapso de bordas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 11. Remove animacoes para usuarios que preferem
+       movimento reduzido (acessibilidade) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 12. Root com scroll suave (quando nao ha preferencia
+       por movimento reduzido) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 13. Remove outline padrao e adiciona um mais acessivel
+       apenas quando necessario (navegacao por teclado) */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
